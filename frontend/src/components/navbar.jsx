@@ -17,6 +17,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 
 const pages = ["Home", "Patients"];
 // const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -44,12 +45,14 @@ function ResponsiveAppBar() {
       <AppBar position="static">
          <Container maxWidth="xl">
             <Toolbar disableGutters>
-               <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+               <AddCircleOutlineOutlinedIcon
+                  sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+               />
                <Typography
                   variant="h6"
                   noWrap
                   component="a"
-                  href="#app-bar-with-responsive-menu"
+                  href="https://beyondmd.care/"
                   sx={{
                      mr: 2,
                      display: { xs: "none", md: "flex" },
@@ -60,7 +63,7 @@ function ResponsiveAppBar() {
                      textDecoration: "none",
                   }}
                >
-                  LOGO
+                  BeyondMD
                </Typography>
 
                <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
