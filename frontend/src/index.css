@@ -1,5 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   font-family: 'Cormorant Garamond', serif;
   font-family: 'Nunito', sans-serif;
   font-family: 'Ysabeau', sans-serif;
+}
+
+h1 {
+  text-decoration: underline;
 }
