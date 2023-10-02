@@ -1,10 +1,10 @@
 import Navbar from "../components/navbar";
 
-export default function Root() {
+export default function Patients() {
    return (
       <>
          <Navbar />
-         <h1>Hello BeyondMD!</h1>
+         <h1>Patients</h1>
       </>
    );
 }
