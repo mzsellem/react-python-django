@@ -4,7 +4,7 @@ export default function Home() {
    return (
       <>
          <Navbar />
-         <h1 className="text-red-400">Hello BeyondMD!</h1>
+         <h1>Hello BeyondMD!</h1>
       </>
    );
 }
