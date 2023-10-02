@@ -4,6 +4,7 @@
 }
 
 import * as React from "react";
+import { Link } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -16,7 +17,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+// import AdbIcon from "@mui/icons-material/Adb";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 
 const pages = ["Home", "Patients"];
@@ -102,8 +103,8 @@ function ResponsiveAppBar() {
                      ))}
                   </Menu>
                </Box>
-               <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-               <Typography
+               {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
+               {/* <Typography
                   variant="h5"
                   noWrap
                   component="a"
@@ -120,16 +121,21 @@ function ResponsiveAppBar() {
                   }}
                >
                   LOGO
-               </Typography>
+               </Typography> */}
                <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                   {pages.map((page) => (
-                     <Button
+                     <Link
                         key={page}
-                        onClick={handleCloseNavMenu}
-                        sx={{ my: 2, color: "white", display: "block" }}
+                        to={page === "Home" ? "/" : `/${page.toLowerCase()}`}
+                        style={{ textDecoration: "none", color: "inherit" }}
                      >
-                        {page}
-                     </Button>
+                        <Button
+                           onClick={handleCloseNavMenu}
+                           sx={{ my: 2, color: "white", display: "block" }}
+                        >
+                           {page}
+                        </Button>
+                     </Link>
                   ))}
                </Box>
 
