@@ -4,7 +4,7 @@ export default function Patients() {
    return (
       <>
          <Navbar />
-         <h1>Patients</h1>
+         <h1 className="text-3xl">Patients</h1>
       </>
    );
 }
