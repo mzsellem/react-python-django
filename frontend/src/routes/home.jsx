@@ -2,30 +2,53 @@ import Navbar from "../components/navbar";
 import { Worker } from "@react-pdf-viewer/core";
 import { Viewer } from "@react-pdf-viewer/core";
 import "@react-pdf-viewer/core/lib/styles/index.css";
+import { pageNavigationPlugin } from "@react-pdf-viewer/page-navigation";
+import "@react-pdf-viewer/page-navigation/lib/styles/index.css";
 
 import * as React from "react";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
 export default function Home() {
+   const pageNavigationPluginInstance = pageNavigationPlugin();
+
+   const { CurrentPageInput, GoToNextPageButton, GoToPreviousPage } =
+      pageNavigationPluginInstance;
+
    return (
       <>
          <Navbar />
          <div className="flex flex-row w-full justify-between p-6">
-            <div className="flex flex-col text-3xl border w-1/2">
-               <div className="flex justify-center mb-">Resume</div>
+            <div className="flex flex-col border w-1/2">
+               <div className="flex justify-center text-3xl">Resume</div>
                <div className="flex justify-center">
                   {/* pdfjs uses a web worker to process the most tasks which take
                   time such as parsing and rendering a PDF document. */}
                   <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
-                     <Viewer fileUrl="resume.pdf" />
+                     <div className="flex w-full flex-col h-full">
+                        <div className="flex bg-stone-200 border-4 justify-center px-4">
+                           <div className="pt-0 pr-2">
+                              <GoToPreviousPage />
+                           </div>
+                           <div className="pt-0 pr-2">
+                              <CurrentPageInput />
+                           </div>
+                           <div className="pt-0 pr-2">
+                              <GoToNextPageButton />
+                           </div>
+                        </div>
+                        <Viewer
+                           fileUrl="resume.pdf"
+                           plugins={[pageNavigationPluginInstance]}
+                        />
+                     </div>
                   </Worker>
                </div>
-               <div className="flex justify-center">
+               {/* <div className="flex justify-center">
                   <Stack spacing={2}>
                      <Pagination count={2} color="primary" />
                   </Stack>
-               </div>
+               </div> */}
             </div>
             <div className="flex text-3xl border w-1/2 justify-center">
                Hello BeyondMD!
