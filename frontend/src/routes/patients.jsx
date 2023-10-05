@@ -1,6 +1,7 @@
 import Navbar from "../components/navbar";
 import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
+import ICD10Search from "../components/icd";
 
 export default function Patients() {
    const columns = [
@@ -60,8 +61,10 @@ export default function Patients() {
                   />
                </div>
             </div>
-            <div className="flex text-3xl border w-1/2 justify-center">
-               Search
+            <div className="flex text-3xl border w-1/2 justify-start">
+               <div className="ml-4">
+                  <ICD10Search />
+               </div>
             </div>
          </div>
       </>

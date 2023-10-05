@@ -23,7 +23,7 @@ import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOu
 const pages = ["Home", "Patients"];
 // const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-function ResponsiveAppBar() {
+export default function ResponsiveAppBar() {
    const [anchorElNav, setAnchorElNav] = React.useState(null);
    const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -132,4 +132,3 @@ function ResponsiveAppBar() {
       </AppBar>
    );
 }
-export default ResponsiveAppBar;
