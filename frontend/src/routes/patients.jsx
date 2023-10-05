@@ -43,6 +43,7 @@ export default function Patients() {
             <div className="flex flex-col w-1/2">
                <div className="flex">
                   <div className="flex text-3xl">Patients</div>
+                  &nbsp; &nbsp;
                   <button className="flex m-2">+</button>
                </div>
                <div
