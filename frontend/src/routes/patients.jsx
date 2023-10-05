@@ -14,8 +14,8 @@ export default function Patients() {
          width: 90,
       },
       {
-         field: "fullName",
-         headerName: "Full name",
+         field: "diagnosis",
+         headerName: "Diagnosis",
          description: "This column has a value getter and is not sortable.",
          sortable: false,
          width: 160,
@@ -42,14 +42,11 @@ export default function Patients() {
          <div className="flex flex-row w-full justify-between p-6">
             <div className="flex flex-col w-1/2">
                <div className="flex">
-                  <div className="flex text-3xl">Patients</div>
+                  <div className="flex text-3xl mb-4">Patients</div>
                   &nbsp; &nbsp;
                   <button className="flex m-2">+</button>
                </div>
-               <div
-                  style={{ height: 400, width: "100%" }}
-                  className="flex flex-row"
-               >
+               <div className="flex flex-row height width">
                   <DataGrid
                      rows={rows}
                      columns={columns}
