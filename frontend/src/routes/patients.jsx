@@ -19,9 +19,17 @@ export default function Patients() {
          headerName: "Diagnosis",
          description: "This column has a value getter and is not sortable.",
          sortable: false,
-         width: 160,
-         valueGetter: (params) =>
-            `${params.row.firstName || ""} ${params.row.lastName || ""}`,
+         width: 200,
+         // valueGetter: (params) =>
+         //    `${params.row.firstName || ""} ${params.row.lastName || ""}`,
+         renderCell: (params) => (
+            <button
+               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+               onClick={() => handleButtonClick(params.row)}
+            >
+               Add Diagnosis
+            </button>
+         ),
       },
    ];
 
@@ -40,8 +48,11 @@ export default function Patients() {
    return (
       <>
          <Navbar />
-         <div className="flex flex-row w-full justify-between p-6">
-            <div className="flex flex-col w-1/2">
+         <div className="flex flex-col w-full justify-between p-6">
+            <div className="flex text-3xl w-full border justify-center">
+               <ICD10Search />
+            </div>
+            <div className="flex flex-col w-full">
                <div className="flex">
                   <div className="flex text-3xl mb-4">Patients</div>
                   &nbsp; &nbsp;
@@ -59,11 +70,6 @@ export default function Patients() {
                      pageSizeOptions={[5, 10]}
                      checkboxSelection
                   />
-               </div>
-            </div>
-            <div className="flex text-3xl border w-1/2 justify-start">
-               <div className="ml-4">
-                  <ICD10Search />
                </div>
             </div>
          </div>
